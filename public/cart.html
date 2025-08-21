@@ -46,19 +46,129 @@
                             </div>
                         </div>
 
-                        <!-- Empty Cart Message -->
-                        <div id="emptyCart" class="bg-gray-800 rounded-lg p-12 text-center hidden">
-                            <i class="fas fa-shopping-cart text-gray-600 text-6xl mb-6"></i>
-                            <h3 class="text-2xl font-bold mb-4">ตะกร้าของคุณว่างเปล่า</h3>
-                            <p class="text-gray-400 mb-6">เพิ่มสินค้าในตะกร้าเพื่อดำเนินการต่อ</p>
-                            <a href="index.html" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
-                                <i class="fas fa-arrow-left mr-2"></i>กลับไปช้อปปิ้ง
-                            </a>
-                        </div>
-
                         <!-- Cart Items Container -->
                         <div id="cartItems" class="space-y-4">
-                            <!-- Cart items will be dynamically generated here -->
+                            <!-- Cart Item 1 -->
+                            <div class="bg-gray-800 rounded-lg p-6 flex items-center space-x-6 transform hover:scale-105 transition-transform">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100&h=100&fit=crop&crop=center" 
+                                         alt="AK-47" class="w-20 h-20 rounded-lg object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold mb-2">AK-47 Assault Rifle</h3>
+                                    <p class="text-gray-400 text-sm mb-2">ปืนไรเฟิลจู่โจมคลาสสิก</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-red-500 font-bold text-xl">฿85,000</span>
+                                        <span class="text-gray-500 line-through text-sm">฿95,000</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="changeQuantity(1, -1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-minus text-sm"></i>
+                                    </button>
+                                    <span class="font-bold text-lg w-8 text-center" id="qty-1">2</span>
+                                    <button onclick="changeQuantity(1, 1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-plus text-sm"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xl font-bold text-red-500 mb-2">฿170,000</div>
+                                    <button onclick="removeItem(1)" class="text-red-400 hover:text-red-300 transition-colors">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="bg-gray-800 rounded-lg p-6 flex items-center space-x-6 transform hover:scale-105 transition-transform">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=100&h=100&fit=crop&crop=center" 
+                                         alt="M4A1" class="w-20 h-20 rounded-lg object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold mb-2">M4A1 Carbine</h3>
+                                    <p class="text-gray-400 text-sm mb-2">ปืนไรเฟิลคาร์ไบน์สมัยใหม่</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-red-500 font-bold text-xl">฿120,000</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="changeQuantity(2, -1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-minus text-sm"></i>
+                                    </button>
+                                    <span class="font-bold text-lg w-8 text-center" id="qty-2">1</span>
+                                    <button onclick="changeQuantity(2, 1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-plus text-sm"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xl font-bold text-red-500 mb-2">฿120,000</div>
+                                    <button onclick="removeItem(2)" class="text-red-400 hover:text-red-300 transition-colors">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 3 -->
+                            <div class="bg-gray-800 rounded-lg p-6 flex items-center space-x-6 transform hover:scale-105 transition-transform">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=100&h=100&fit=crop&crop=center" 
+                                         alt="Tactical Vest" class="w-20 h-20 rounded-lg object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold mb-2">Tactical Vest Level IIIA</h3>
+                                    <p class="text-gray-400 text-sm mb-2">เสื้อกั้นกระสุนระดับมืออาชีพ</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-red-500 font-bold text-xl">฿15,500</span>
+                                        <span class="text-gray-500 line-through text-sm">฿18,000</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="changeQuantity(3, -1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-minus text-sm"></i>
+                                    </button>
+                                    <span class="font-bold text-lg w-8 text-center" id="qty-3">3</span>
+                                    <button onclick="changeQuantity(3, 1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-plus text-sm"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xl font-bold text-red-500 mb-2">฿46,500</div>
+                                    <button onclick="removeItem(3)" class="text-red-400 hover:text-red-300 transition-colors">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 4 -->
+                            <div class="bg-gray-800 rounded-lg p-6 flex items-center space-x-6 transform hover:scale-105 transition-transform">
+                                <div class="flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=100&h=100&fit=crop&crop=center" 
+                                         alt="Night Vision" class="w-20 h-20 rounded-lg object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg font-bold mb-2">Night Vision Goggles Gen 3</h3>
+                                    <p class="text-gray-400 text-sm mb-2">แว่นตามองกลางคืนรุ่นล่าสุด</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-red-500 font-bold text-xl">฿45,000</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button onclick="changeQuantity(4, -1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-minus text-sm"></i>
+                                    </button>
+                                    <span class="font-bold text-lg w-8 text-center" id="qty-4">1</span>
+                                    <button onclick="changeQuantity(4, 1)" class="bg-gray-700 hover:bg-gray-600 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
+                                        <i class="fas fa-plus text-sm"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xl font-bold text-red-500 mb-2">฿45,000</div>
+                                    <button onclick="removeItem(4)" class="text-red-400 hover:text-red-300 transition-colors">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -71,20 +181,24 @@
                             <div class="space-y-4 mb-6">
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-400">จำนวนสินค้า:</span>
-                                    <span id="totalItems" class="font-semibold">0 ชิ้น</span>
+                                    <span id="totalItems" class="font-semibold">7 ชิ้น</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-400">ราคารวม:</span>
-                                    <span id="subtotal" class="font-semibold">฿0</span>
+                                    <span id="subtotal" class="font-semibold">฿381,500</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-400">ส่วนลด:</span>
+                                    <span id="discount" class="font-semibold text-green-500">-฿19,075</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-400">ค่าจัดส่ง:</span>
-                                    <span id="shipping" class="font-semibold">฿0</span>
+                                    <span id="shipping" class="font-semibold text-green-500">ฟรี</span>
                                 </div>
                                 <div class="border-t border-gray-600 pt-4">
                                     <div class="flex justify-between items-center text-xl font-bold">
                                         <span>ยอดรวมทั้งหมด:</span>
-                                        <span id="total" class="text-red-500">฿0</span>
+                                        <span id="total" class="text-red-500">฿362,425</span>
                                     </div>
                                 </div>
                             </div>
@@ -93,29 +207,37 @@
                             <div class="mb-6">
                                 <label class="block text-sm font-medium mb-2">รหัสส่วนลด</label>
                                 <div class="flex">
-                                    <input type="text" id="discountCode" placeholder="ใส่รหัสส่วนลด" 
-                                           class="flex-1 bg-gray-700 text-white p-3 rounded-l-lg border border-gray-600 focus:border-red-500 focus:outline-none">
-                                    <button id="applyDiscount" class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-r-lg transition-colors">
+                                    <input type="text" id="discountCode" placeholder="ใส่รหัสส่วนลด" value="TACTICAL05"
+                                           class="flex-1 bg-gray-700 text-white p-3 rounded-l-lg border border-green-500 focus:border-red-500 focus:outline-none">
+                                    <button id="applyDiscount" class="bg-green-600 hover:bg-green-700 px-4 py-3 rounded-r-lg transition-colors">
                                         <i class="fas fa-check"></i>
                                     </button>
                                 </div>
-                                <div id="discountMessage" class="text-sm mt-2 hidden"></div>
+                                <div id="discountMessage" class="text-sm mt-2 text-green-500">
+                                    <i class="fas fa-check-circle mr-2"></i>ใช้รหัสส่วนลดสำเร็จ! ลด 5%
+                                </div>
                             </div>
 
                             <!-- Checkout Buttons -->
                             <div class="space-y-3">
-                                <button id="checkoutBtn" class="w-full bg-red-600 hover:bg-red-700 py-4 rounded-lg font-bold text-lg transition-colors transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
+                                <button id="checkoutBtn" class="w-full bg-red-600 hover:bg-red-700 py-4 rounded-lg font-bold text-lg transition-colors transform hover:scale-105">
                                     <i class="fas fa-credit-card mr-2"></i>ดำเนินการสั่งซื้อ
                                 </button>
-                                <!-- <a href="index.html" class="block w-full text-center border-2 border-gray-600 hover:border-red-500 py-3 rounded-lg font-semibold transition-colors">
+                                <a href="index.html" class="block w-full text-center border-2 border-gray-600 hover:border-red-500 py-3 rounded-lg font-semibold transition-colors">
                                     <i class="fas fa-arrow-left mr-2"></i>เลือกซื้อสินค้าต่อ
-                                </a> -->
+                                </a>
                             </div>
 
                             <!-- Security Info -->
                             <div class="mt-6 text-center text-sm text-gray-400">
                                 <i class="fas fa-shield-alt text-green-500 mr-2"></i>
                                 การชำระเงินปลอดภัยด้วย SSL
+                            </div>
+
+                            <!-- Estimated Delivery -->
+                            <div class="mt-4 text-center text-sm text-gray-400">
+                                <i class="fas fa-truck text-blue-500 mr-2"></i>
+                                คาดการณ์จัดส่ง: 3-5 วันทำการ
                             </div>
                         </div>
                     </div>
@@ -149,26 +271,111 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div id="footer"></div>
+    <!-- Success Message -->
+    <div id="successMessage" class="fixed top-4 right-4 bg-green-600 text-white p-4 rounded-lg shadow-lg transform translate-x-full transition-transform z-50">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span>อัพเดทสำเร็จ!</span>
+        </div>
+    </div>
 
-    <!-- Scripts -->
     <script>
-        // Load navbar and footer
-        fetch('/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            })
-            .catch(err => console.error('โหลด navbar ไม่ได้:', err));
+        // Sample cart data
+        let cartItems = [
+            { id: 1, name: "AK-47 Assault Rifle", price: 85000, quantity: 2, originalPrice: 95000 },
+            { id: 2, name: "M4A1 Carbine", price: 120000, quantity: 1 },
+            { id: 3, name: "Tactical Vest Level IIIA", price: 15500, quantity: 3, originalPrice: 18000 },
+            { id: 4, name: "Night Vision Goggles Gen 3", price: 45000, quantity: 1 }
+        ];
 
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            })
-            .catch(err => console.error('โหลด footer ไม่ได้:', err));
+        // Change quantity function
+        function changeQuantity(itemId, change) {
+            const item = cartItems.find(item => item.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity < 1) item.quantity = 1;
+                if (item.quantity > 99) item.quantity = 99;
+                
+                document.getElementById(`qty-${itemId}`).textContent = item.quantity;
+                updateOrderSummary();
+                showSuccessMessage();
+            }
+        }
+
+        // Remove item function
+        function removeItem(itemId) {
+            if (confirm('คุณต้องการลบสินค้านี้จากตะกร้าหรือไม่?')) {
+                cartItems = cartItems.filter(item => item.id !== itemId);
+                // Remove the item element from DOM
+                document.querySelector(`[onclick="removeItem(${itemId})"]`).closest('.bg-gray-800').remove();
+                updateOrderSummary();
+                showSuccessMessage('ลบสินค้าสำเร็จ!');
+                
+                // Check if cart is empty
+                if (cartItems.length === 0) {
+                    document.getElementById('cartItems').innerHTML = `
+                        <div class="bg-gray-800 rounded-lg p-12 text-center">
+                            <i class="fas fa-shopping-cart text-gray-600 text-6xl mb-6"></i>
+                            <h3 class="text-2xl font-bold mb-4">ตะกร้าของคุณว่างเปล่า</h3>
+                            <p class="text-gray-400 mb-6">เพิ่มสินค้าในตะกร้าเพื่อดำเนินการต่อ</p>
+                            <a href="index.html" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                                <i class="fas fa-arrow-left mr-2"></i>กลับไปช้อปปิ้ง
+                            </a>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Update order summary
+        function updateOrderSummary() {
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discount = subtotal * 0.05; // 5% discount
+            const total = subtotal - discount;
+
+            document.getElementById('totalItems').textContent = `${totalItems} ชิ้น`;
+            document.getElementById('subtotal').textContent = `฿${subtotal.toLocaleString()}`;
+            document.getElementById('total').textContent = `฿${total.toLocaleString()}`;
+        }
+
+        // Show success message
+        function showSuccessMessage(message = 'อัพเดทสำเร็จ!') {
+            const successMsg = document.getElementById('successMessage');
+            successMsg.querySelector('span').textContent = message;
+            successMsg.classList.remove('translate-x-full');
+            setTimeout(() => {
+                successMsg.classList.add('translate-x-full');
+            }, 3000);
+        }
+
+        // Clear cart
+        document.getElementById('clearCart').addEventListener('click', function() {
+            if (confirm('คุณต้องการล้างสินค้าทั้งหมดในตะกร้าหรือไม่?')) {
+                cartItems = [];
+                document.getElementById('cartItems').innerHTML = `
+                    <div class="bg-gray-800 rounded-lg p-12 text-center">
+                        <i class="fas fa-shopping-cart text-gray-600 text-6xl mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">ตะกร้าของคุณว่างเปล่า</h3>
+                        <p class="text-gray-400 mb-6">เพิ่มสินค้าในตะกร้าเพื่อดำเนินการต่อ</p>
+                        <a href="index.html" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                            <i class="fas fa-arrow-left mr-2"></i>กลับไปช้อปปิ้ง
+                        </a>
+                    </div>
+                `;
+                updateOrderSummary();
+                showSuccessMessage('ล้างตะกร้าสำเร็จ!');
+            }
+        });
+
+        // Checkout button
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            alert('เปลี่ยนเส้นทางไปหน้าชำระเงิน...');
+            // Here you would typically redirect to checkout page
+        });
+
+        // Initialize
+        updateOrderSummary();
     </script>
-    <script src="js/cart.js" defer></script>
 </body>
 </html>
